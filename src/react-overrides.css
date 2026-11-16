@@ -1,0 +1,61 @@
+.admin-status-card {
+  border: 1px solid var(--line);
+  background: var(--paper);
+  padding: 25px;
+}
+
+.admin-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 11px;
+  background: #f1eadc;
+  color: #705d3e;
+  border: 1px solid #e3d5ba;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.admin-status-badge::before {
+  content: '';
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #b67c3d;
+}
+
+.admin-next-steps {
+  margin: 16px 0 0;
+  padding-right: 20px;
+  color: #68665f;
+  font-size: 13px;
+  line-height: 2;
+}
+
+.admin-demo-product {
+  border-bottom: 1px solid var(--line);
+  padding: 13px 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  font-size: 13px;
+}
+
+.admin-demo-product:last-child {
+  border-bottom: 0;
+}
+
+.admin-demo-product small {
+  display: block;
+  color: var(--muted);
+  font-size: 10px;
+}
+
+@media (max-width: 650px) {
+  .admin-status-card {
+    padding: 18px;
+  }
+  .admin-demo-product {
+    font-size: 12px;
+  }
+}

@@ -1,125 +1,15 @@
 <!doctype html>
 <html lang="ar" dir="rtl">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#171816">
-  <meta name="description" content="IGO Clothing Brand — ستايلك يبدأ من اختيارك. تصفّح الأمثلة واطلب تفاصيلك عبر واتساب.">
-  <title>IGO Clothing Brand | اختار ستايلك</title>
-  <link rel="icon" href="assets/igo-logo.jpg" type="image/jpeg">
-  <link rel="stylesheet" href="styles.css">
-  <script src="store.js" defer></script>
-</head>
-<body>
-  <div class="announcement"><span class="announcement-dot"></span> كل المنتجات والأسعار الحالية أمثلة قابلة للتعديل</div>
-  <header class="site-header">
-    <a class="brand" href="#home" aria-label="IGO Clothing Brand - الرئيسية">
-      <img src="assets/igo-logo.jpg" alt="شعار IGO Clothing Brand">
-      <span class="brand-copy"><strong>IGO</strong><small>CLOTHING BRAND</small></span>
-    </a>
-    <nav class="main-nav" aria-label="التنقل الرئيسي">
-      <a class="active" href="#home">الرئيسية</a>
-      <a href="#products">المنتجات</a>
-      <a href="#about">عن IGO</a>
-    </nav>
-    <a class="button button-light header-cta" href="https://wa.me/201000364250?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20IGO%D8%8C%20%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%A3%D8%B9%D8%B1%D9%81%20%D8%AA%D9%81%D8%A7%D8%B5%D9%8A%D9%84%20%D8%A7%D9%84%D9%85%D9%86%D8%AA%D8%AC%D8%A7%D8%AA" target="_blank" rel="noopener">كلمنا على واتساب <span aria-hidden="true">↗</span></a>
-    <button class="mobile-menu-button" aria-label="فتح القائمة" aria-expanded="false"><span></span><span></span></button>
-  </header>
-
-  <main>
-    <section class="hero" id="home">
-      <div class="hero-copy">
-        <span class="eyebrow"><span></span> IGO — CLOTHING BRAND</span>
-        <h1>ستايلك.<br><em>على مزاجك.</em></h1>
-        <p>قطع بسيطة بتفاصيل مختلفة. اختار الإطلالة اللي شبهك، واسألنا عن المقاس والتفاصيل على واتساب.</p>
-        <div class="hero-actions">
-          <a class="button button-accent" href="#products">اكتشف المنتجات <span aria-hidden="true">←</span></a>
-          <a class="text-link" href="https://wa.me/201000364250?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20IGO%D8%8C%20%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%A3%D8%B9%D8%B1%D9%81%20%D8%AA%D9%81%D8%A7%D8%B5%D9%8A%D9%84%20%D8%A7%D9%84%D9%85%D9%86%D8%AA%D8%AC%D8%A7%D8%AA" target="_blank" rel="noopener">اسألنا مباشرة <span aria-hidden="true">↗</span></a>
-        </div>
-        <div class="hero-footnote"><span class="footnote-line"></span><span>اختياراتك هي اللي بتكمّل اللوك</span></div>
-      </div>
-      <div class="hero-visual">
-        <img src="assets/sample-set.jpg" alt="إطلالة ملابس كاجوال بلون محايد — صورة توضيحية" fetchpriority="high">
-        <div class="hero-image-shade"></div>
-        <div class="hero-stamp"><span>IGO</span><small>FIND YOUR<br>OWN FIT</small></div>
-        <div class="hero-image-caption"><span class="caption-index">01 / 03</span><span>LOOKS THAT<br>FEEL LIKE YOU</span></div>
-      </div>
-      <span class="hero-watermark" aria-hidden="true">IGO</span>
-    </section>
-
-    <section class="trust-strip" aria-label="معلومات المتجر">
-      <div><span class="strip-number">01</span><span>تصفّح أمثلة المنتجات</span></div>
-      <div><span class="strip-number">02</span><span>اختار المقاس واللون</span></div>
-      <div><span class="strip-number">03</span><span>كمل طلبك على واتساب</span></div>
-    </section>
-
-    <section class="products-section section-wrap" id="products">
-      <div class="section-heading">
-        <div>
-          <span class="eyebrow eyebrow-dark"><span></span> THE IGO EDIT</span>
-          <h2>اختيارات <em>مميزة</em></h2>
-          <p>دي أمثلة مؤقتة للمنتجات والأسعار — تقدر تعدّلها لاحقًا.</p>
-        </div>
-        <div class="product-tools">
-          <label class="search-box">
-            <span class="search-icon" aria-hidden="true">⌕</span>
-            <input id="product-search" type="search" placeholder="دور على قطعة..." aria-label="ابحث عن منتج">
-          </label>
-        </div>
-      </div>
-      <div class="filter-row" role="group" aria-label="تصفية المنتجات">
-        <button class="filter-chip is-selected" data-filter="الكل">الكل <span>03</span></button>
-        <button class="filter-chip" data-filter="هوديز">هوديز</button>
-        <button class="filter-chip" data-filter="أطقم">أطقم</button>
-        <button class="filter-chip" data-filter="بناطيل">بناطيل</button>
-      </div>
-      <p class="demo-banner"><span aria-hidden="true">✳</span> صور وأسعار توضيحية فقط في الوقت الحالي؛ تأكد من السعر والتوفر عبر واتساب.</p>
-      <div class="product-grid" id="product-grid" aria-live="polite">
-        <div class="loading-card">بنجهّز لك الاختيارات...</div>
-      </div>
-      <p class="no-products" id="no-products" hidden>مفيش منتجات مطابقة للبحث دلوقتي.</p>
-    </section>
-
-    <section class="brand-story" id="about">
-      <div class="story-mark">I<span>G</span>O</div>
-      <div class="story-copy">
-        <span class="eyebrow"><span></span> YOUR STYLE, YOUR RULES</span>
-        <h2>مش لازم تقول<br><em>كتير عشان تِبان.</em></h2>
-        <p>IGO مساحة لستايل يومي يعبر عنك. ابدأ من القطعة اللي عجبتك، وخلّينا نساعدك تعرف تفاصيلها.</p>
-        <a class="button button-outline" href="https://wa.me/201000364250?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20IGO%D8%8C%20%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%A3%D8%B3%D8%A3%D9%84%20%D8%B9%D9%86%20%D8%A7%D9%84%D9%85%D8%AA%D8%AC%D8%B1" target="_blank" rel="noopener">اسألنا عن IGO <span aria-hidden="true">↗</span></a>
-      </div>
-      <div class="story-image"><img src="assets/sample-joggers.jpg" alt="تفصيلة بنطال كاجوال — صورة توضيحية" loading="lazy"><span>DETAILS<br>MATTER</span></div>
-    </section>
-
-    <section class="contact-band">
-      <div><span class="eyebrow"><span></span> LET'S TALK</span><h2>لقيت اللي شبهك؟</h2><p>ابعتلنا على واتساب واسأل عن التفاصيل.</p></div>
-      <a class="button button-accent" href="https://wa.me/201000364250?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20IGO%D8%8C%20%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%A3%D8%B9%D8%B1%D9%81%20%D8%AA%D9%81%D8%A7%D8%B5%D9%8A%D9%84%20%D8%A7%D9%84%D9%85%D9%86%D8%AA%D8%AC%D8%A7%D8%AA" target="_blank" rel="noopener">ابدأ محادثة <span aria-hidden="true">↗</span></a>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <a class="brand footer-brand" href="#home"><img src="assets/igo-logo.jpg" alt="شعار IGO"><span class="brand-copy"><strong>IGO</strong><small>CLOTHING BRAND</small></span></a>
-    <p>© <span id="year"></span> IGO Clothing Brand. جميع الحقوق محفوظة.</p>
-    <div class="footer-links"><a href="https://wa.me/201000364250" target="_blank" rel="noopener">واتساب</a><a href="admin.html">إدارة المنتجات</a></div>
-  </footer>
-
-  <dialog class="order-dialog" id="order-dialog" aria-labelledby="dialog-title">
-    <form id="order-form" method="dialog">
-      <button class="dialog-close" type="button" aria-label="إغلاق">×</button>
-      <span class="eyebrow eyebrow-dark"><span></span> QUICK ORDER</span>
-      <h2 id="dialog-title">اطلب القطعة</h2>
-      <p class="dialog-product-name" id="dialog-product-name"></p>
-      <p class="dialog-demo-price" id="dialog-product-price"></p>
-      <label class="form-label" for="order-size">المقاس</label>
-      <select id="order-size" required><option value="" selected disabled>اختار المقاس</option><option>Small</option><option>Medium</option><option>Large</option><option>XL</option><option>XXL</option></select>
-      <label class="form-label" for="order-color">اللون المفضل</label>
-      <input id="order-color" type="text" placeholder="مثال: أسود" required>
-      <label class="form-label" for="order-quantity">الكمية</label>
-      <input id="order-quantity" type="number" min="1" max="10" value="1" required>
-      <button class="button button-dark dialog-submit" type="submit">كمل الطلب على واتساب <span aria-hidden="true">↗</span></button>
-      <small class="dialog-note">السعر والتوفر في الرسالة توضيحيان؛ أكّد التفاصيل مع المتجر.</small>
-    </form>
-  </dialog>
-  <div class="toast" id="toast" role="status" aria-live="polite"></div>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#171816" />
+    <meta name="description" content="IGO Clothing Brand — ستايلك يبدأ من اختيارك. تصفّح الأمثلة واطلب التفاصيل عبر واتساب." />
+    <link rel="icon" href="/assets/igo-logo.jpg" type="image/jpeg" />
+    <title>IGO Clothing Brand | اختار ستايلك</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>
