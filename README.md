@@ -36,3 +36,7 @@ python3 -m http.server 4173
 ## صور المثال
 
 صور الملابس مؤقتة للتصميم وليست صور منتجات IGO الفعلية. لا تستخدمها كتمثيل مضمون للمخزون؛ استبدلها بصور منتجاتك التي تملك حق استخدامها.
+
+- هودي: [Arturo Mendez / Unsplash](https://unsplash.com/photos/man-in-beige-hoodie-and-blue-denim-jeans-standing-on-white-concrete-wall-during-daytime-Apcpq1RXkio).
+- طقم: [Monstera Production / Pexels](https://www.pexels.com/photo/young-woman-wearing-gray-sweatpants-and-sweatshirt-6311642/).
+- بنطال: [Engin Akyurt / Pexels](https://www.pexels.com/photo/stylish-gray-women-s-joggers-on-white-background-39457735/).
