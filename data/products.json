@@ -1,0 +1,29 @@
+[
+  {
+    "id": "igo-hoodie-sand",
+    "name": "هودي أوفرسايز رملي",
+    "category": "هوديز",
+    "price": 1290,
+    "description": "هودي يومي بقصة واسعة ولون هادئ.",
+    "image": "assets/sample-hoodie.jpg",
+    "featured": true
+  },
+  {
+    "id": "igo-set-neutral",
+    "name": "طقم كاجوال محايد",
+    "category": "أطقم",
+    "price": 1850,
+    "description": "إطلالة مريحة بطبقات بسيطة.",
+    "image": "assets/sample-set.jpg",
+    "featured": false
+  },
+  {
+    "id": "igo-joggers-classic",
+    "name": "بنطال جوجر كلاسيك",
+    "category": "بناطيل",
+    "price": 990,
+    "description": "قطعة أساسية لإطلالة يومية سهلة.",
+    "image": "assets/sample-joggers.jpg",
+    "featured": false
+  }
+]

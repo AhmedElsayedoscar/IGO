@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#171816">
+  <meta name="robots" content="noindex,nofollow">
+  <title>إدارة المنتجات | IGO Clothing Brand</title>
+  <link rel="icon" href="assets/igo-logo.jpg" type="image/jpeg">
+  <link rel="stylesheet" href="styles.css">
+  <script src="admin.js" defer></script>
+</head>
+<body class="admin-page">
+  <header class="site-header admin-header">
+    <a class="brand" href="index.html" aria-label="العودة إلى متجر IGO">
+      <img src="assets/igo-logo.jpg" alt="شعار IGO Clothing Brand">
+      <span class="brand-copy"><strong>IGO</strong><small>CLOTHING BRAND</small></span>
+    </a>
+    <a class="text-link admin-back" href="index.html">العودة للمتجر <span aria-hidden="true">↗</span></a>
+  </header>
+  <main class="admin-main">
+    <div class="admin-title-row">
+      <div><span class="eyebrow eyebrow-dark"><span></span> STORE CONTROL</span><h1>إدارة <em>المنتجات</em></h1><p>أضف المنتجات أو عدّل الأمثلة المعروضة في المتجر.</p></div>
+      <a class="button button-dark" href="index.html#products" target="_blank" rel="noopener">معاينة المتجر <span aria-hidden="true">↗</span></a>
+    </div>
+    <aside class="admin-warning" role="note">
+      <strong><span aria-hidden="true">ⓘ</span> مهم: لوحة تجريبية وليست نظام إدارة آمنًا.</strong>
+      <p>التعديلات هنا تُحفظ في هذا المتصفح وعلى هذا الجهاز فقط؛ لن تظهر لزوار الموقع. لا توجد كلمة مرور ولا حفظ مشترك. لنشر التغييرات: نزّل ملف <code>products.json</code> بعد التعديل، ثم استبدل الملف <code>data/products.json</code> في مستودع GitHub وارفع التغيير.</p>
+    </aside>
+    <div class="admin-toolbar">
+      <div><span class="admin-count" id="admin-count">0</span> منتج</div>
+      <div class="admin-actions"><button class="button button-outline-dark" id="export-products" type="button">تنزيل ملف المنتجات JSON</button><button class="button button-quiet" id="reset-products" type="button">استعادة أمثلة البداية</button></div>
+    </div>
+    <div class="admin-layout">
+      <section class="admin-products-panel">
+        <div class="admin-panel-heading"><h2>قائمة المنتجات</h2><span>الأمثلة الحالية</span></div>
+        <div class="admin-product-list" id="admin-product-list"><p class="loading-card">جارٍ تحميل المنتجات...</p></div>
+      </section>
+      <section class="admin-form-panel">
+        <div class="admin-panel-heading"><h2 id="form-heading">إضافة منتج</h2><span>كل الحقول المطلوبة</span></div>
+        <form id="product-form" class="product-form">
+          <input type="hidden" id="product-id">
+          <label for="product-name">اسم المنتج</label><input id="product-name" type="text" maxlength="80" required placeholder="مثال: هودي أوفرسايز">
+          <div class="form-columns"><div><label for="product-category">التصنيف</label><select id="product-category" required><option value="هوديز">هوديز</option><option value="أطقم">أطقم</option><option value="بناطيل">بناطيل</option><option value="تيشيرتات">تيشيرتات</option><option value="أخرى">أخرى</option></select></div><div><label for="product-price">السعر بالجنيه</label><input id="product-price" type="number" min="0" step="1" required placeholder="1290"></div></div>
+          <label for="product-description">وصف مختصر</label><textarea id="product-description" rows="3" maxlength="180" placeholder="اكتب وصفًا واضحًا للمنتج"></textarea>
+          <label for="product-image">مسار الصورة داخل الموقع</label><input id="product-image" type="text" required placeholder="assets/sample-hoodie.jpg" dir="ltr"><small>استخدم مسار صورة موجودة بالمستودع مثل <code>assets/sample-hoodie.jpg</code>.</small>
+          <label class="checkbox-line"><input id="product-featured" type="checkbox"><span>تمييز المنتج بوسم «اختيارنا»</span></label>
+          <div class="admin-form-actions"><button class="button button-dark" type="submit" id="save-product">حفظ في هذا المتصفح</button><button class="button button-quiet" type="button" id="cancel-edit" hidden>إلغاء التعديل</button></div>
+        </form>
+      </section>
+    </div>
+    <p class="admin-footnote">هذه الصفحة علنية لأنها جزء من موقع ثابت. لا تدخل بيانات سرية أو كلمات مرور هنا. النشر العام متاح فقط بعد رفع ملف JSON الجديد إلى GitHub.</p>
+  </main>
+  <footer class="site-footer"><a class="brand footer-brand" href="index.html"><img src="assets/igo-logo.jpg" alt="شعار IGO"><span class="brand-copy"><strong>IGO</strong><small>CLOTHING BRAND</small></span></a><p>© IGO Clothing Brand</p><a href="index.html">العودة للمتجر</a></footer>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
