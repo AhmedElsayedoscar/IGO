@@ -1,29 +1,220 @@
 [
   {
     "id": "igo-hoodie-sand",
-    "name": "هودي أوفرسايز رملي",
+    "name": "هودي أوفرسايز رملي — Heavyweight 450 GSM",
     "category": "هوديز",
     "price": 1290,
-    "description": "هودي يومي بقصة واسعة ولون هادئ.",
+    "oldPrice": 1550,
+    "rating": 4.9,
+    "reviewsCount": 38,
+    "stock": 4,
+    "badge": "الأكثر طلباً",
+    "tagline": "قطن مصري مغسول فائق النعومة",
+    "description": "هودي مميز بقصة أوفرسايز واسعة مع دروب شولدرز، مصنوع من قطن مصري نقي 100% بوزن 450 جرام، معالج ضد التوبير والانكماش ومصمم ليدوم طويلاً.",
+    "images": [
+      "assets/sample-hoodie.jpg",
+      "assets/sample-set.jpg",
+      "assets/sample-joggers.jpg"
+    ],
     "image": "assets/sample-hoodie.jpg",
-    "featured": true
+    "featured": true,
+    "sizes": ["S", "M", "L", "XL", "XXL"],
+    "colors": [
+      { "name": "رملي هادئ", "hex": "#d6c7b2" },
+      { "name": "أسود أوبسيديان", "hex": "#1a1a18" },
+      { "name": "رمادي إسمنتي", "hex": "#8a8882" }
+    ],
+    "specs": [
+      "خامة: قطن مصري نقي 100%",
+      "الوزن: 450 GSM ثقيل ودافيء",
+      "القصة: Relaxed Oversized Drop-Shoulder",
+      "التطريز: شعار IGO منخفض البروز على الصدر",
+      "الأساور: ريب مضلع متين ومزدوج"
+    ],
+    "sizeGuide": [
+      { "size": "S", "chest": "118 سم", "length": "70 سم", "weight": "55 - 68 كجم" },
+      { "size": "M", "chest": "124 سم", "length": "72 سم", "weight": "68 - 78 كجم" },
+      { "size": "L", "chest": "130 سم", "length": "74 سم", "weight": "78 - 88 كجم" },
+      { "size": "XL", "chest": "136 سم", "length": "76 سم", "weight": "88 - 98 كجم" },
+      { "size": "XXL", "chest": "142 سم", "length": "78 سم", "weight": "98 - 110 كجم" }
+    ]
   },
   {
     "id": "igo-set-neutral",
-    "name": "طقم كاجوال محايد",
+    "name": "طقم كاجوال ستريت وير مونوكروم (جاكيت + بنطال)",
     "category": "أطقم",
     "price": 1850,
-    "description": "إطلالة مريحة بطبقات بسيطة.",
+    "oldPrice": 2200,
+    "rating": 5.0,
+    "reviewsCount": 24,
+    "stock": 2,
+    "badge": "إصدار محدود",
+    "tagline": "إطلالة متكاملة مستوحاة من أزياء الشارع العالمية",
+    "description": "طقم متناسق يجمع بين جاكيت مينيمال بسحاب مخفي وسروال فضفاض بجيوب هندسية، مصمم بخامات مختارة تقاوم التجعد وتمنحك حضوراً واثقاً.",
+    "images": [
+      "assets/sample-set.jpg",
+      "assets/sample-hoodie.jpg",
+      "assets/sample-joggers.jpg"
+    ],
     "image": "assets/sample-set.jpg",
-    "featured": false
+    "featured": true,
+    "sizes": ["M", "L", "XL"],
+    "colors": [
+      { "name": "بيج عاجي", "hex": "#ded6c5" },
+      { "name": "زيتي مطفأ", "hex": "#4e5444" },
+      { "name": "كحلي داكن", "hex": "#1d232a" }
+    ],
+    "specs": [
+      "القطعتان: جاكيت خفيف + بنطال بقصة مستقيمة",
+      "الخامة: مزيج قطن وإيلاستين فائق المرونة",
+      "السحاب: YKK معدني عالي الاعتمادية",
+      "الخصر: حزام مطاطي داخلي برباط متين"
+    ],
+    "sizeGuide": [
+      { "size": "M", "chest": "120 سم", "length": "71 سم", "weight": "65 - 75 كجم" },
+      { "size": "L", "chest": "126 سم", "length": "73 سم", "weight": "75 - 85 كجم" },
+      { "size": "XL", "chest": "132 سم", "length": "75 سم", "weight": "85 - 95 كجم" }
+    ]
   },
   {
     "id": "igo-joggers-classic",
-    "name": "بنطال جوجر كلاسيك",
+    "name": "بنطال جوجر كارجو ثقيل بجيوب جانبية 3D",
     "category": "بناطيل",
     "price": 990,
-    "description": "قطعة أساسية لإطلالة يومية سهلة.",
+    "oldPrice": 1200,
+    "rating": 4.8,
+    "reviewsCount": 42,
+    "stock": 7,
+    "badge": "جديد",
+    "tagline": "القطعة الأساسية اليومية الأكثر راحة",
+    "description": "بنطال جوجر بقصة ستريت مريحة، مزود بـ 4 جيوب كارجو بتقفيل ثلاثي الأبعاد، واستك عريض مريح عند الخصر والكاحل.",
+    "images": [
+      "assets/sample-joggers.jpg",
+      "assets/sample-hoodie.jpg",
+      "assets/sample-set.jpg"
+    ],
     "image": "assets/sample-joggers.jpg",
-    "featured": false
+    "featured": false,
+    "sizes": ["S", "M", "L", "XL", "XXL"],
+    "colors": [
+      { "name": "فحمي غامق", "hex": "#303233" },
+      { "name": "أسود ملكي", "hex": "#151515" },
+      { "name": "كاكي ترابي", "hex": "#827863" }
+    ],
+    "specs": [
+      "الخامة: قطن فرينش تيري 400 GSM",
+      "الجيوب: 4 جيوب عملية مع أزرار كبس مخفية",
+      "المرونة: حزام مطاطي مرن مع رباط سميك معالج",
+      "الكاحل: أساور مرنة تبرز جمال الحذاء الرياضي"
+    ],
+    "sizeGuide": [
+      { "size": "S", "chest": "خصر 30-31", "length": "98 سم", "weight": "55 - 65 كجم" },
+      { "size": "M", "chest": "خصر 32-33", "length": "100 سم", "weight": "65 - 75 كجم" },
+      { "size": "L", "chest": "خصر 34-35", "length": "102 سم", "weight": "75 - 85 كجم" },
+      { "size": "XL", "chest": "خصر 36-37", "length": "104 سم", "weight": "85 - 95 كجم" }
+    ]
+  },
+  {
+    "id": "igo-hoodie-black-noir",
+    "name": "هودي أوبسيديان أسود مطرّز — Signature Noir",
+    "category": "هوديز",
+    "price": 1350,
+    "oldPrice": 1600,
+    "rating": 4.9,
+    "reviewsCount": 19,
+    "stock": 3,
+    "badge": "حصري",
+    "tagline": "سوّاد فاحم فاخر لا يبهت مع الغسيل",
+    "description": "نسيج قطني مزدوج الحياكة بلون أسود فحمي غامق، كابيشون مزدوج الطبقات يقف بثبات دون ارتخاء، مع لمسة فاخرة تعكس شخصيتك.",
+    "images": [
+      "assets/sample-hoodie.jpg",
+      "assets/sample-set.jpg",
+      "assets/sample-joggers.jpg"
+    ],
+    "image": "assets/sample-hoodie.jpg",
+    "featured": true,
+    "sizes": ["M", "L", "XL", "XXL"],
+    "colors": [
+      { "name": "أسود فاحم", "hex": "#0e0e0e" },
+      { "name": "رمادي داكن", "hex": "#2c2d2e" }
+    ],
+    "specs": [
+      "الوزن: 460 GSM أثقل نسيج قطني في التشكيلة",
+      "الغطاء (Hood): طبقة داخلية مزدوجة تحافظ على الهيكل",
+      "الجيوب: جيب كانغرو أمامي مدمج بدقة"
+    ],
+    "sizeGuide": [
+      { "size": "M", "chest": "124 سم", "length": "72 سم", "weight": "68 - 78 كجم" },
+      { "size": "L", "chest": "130 سم", "length": "74 سم", "weight": "78 - 88 كجم" },
+      { "size": "XL", "chest": "136 سم", "length": "76 سم", "weight": "88 - 98 كجم" }
+    ]
+  },
+  {
+    "id": "igo-street-set-edition",
+    "name": "طقم إديشن لوك بوك أسود — Lookbook 01",
+    "category": "أطقم",
+    "price": 1950,
+    "oldPrice": 2350,
+    "rating": 5.0,
+    "reviewsCount": 15,
+    "stock": 1,
+    "badge": "Lookbook",
+    "tagline": "إصدار المجلات الخاص بالافتتاح",
+    "description": "الطقم المفضل لمصممينا، صُمم بنسب عصرية واسعة ولمسات مينيمال تناسب السهرات والطلعات اليومية المريحة.",
+    "images": [
+      "assets/sample-set.jpg",
+      "assets/sample-joggers.jpg",
+      "assets/sample-hoodie.jpg"
+    ],
+    "image": "assets/sample-set.jpg",
+    "featured": false,
+    "sizes": ["S", "M", "L", "XL"],
+    "colors": [
+      { "name": "أسود كربوني", "hex": "#191a18" }
+    ],
+    "specs": [
+      "إصدار محدود مرقّم",
+      "خياطة ألمانية معززة عند نقاط الضغط",
+      "ملمس حريري ناعم من الداخل وقطني غير لامع من الخارج"
+    ],
+    "sizeGuide": [
+      { "size": "M", "chest": "122 سم", "length": "72 سم", "weight": "68 - 78 كجم" },
+      { "size": "L", "chest": "128 سم", "length": "74 سم", "weight": "78 - 88 كجم" }
+    ]
+  },
+  {
+    "id": "igo-pants-relaxed-fit",
+    "name": "بنطال تريكو فضفاض ريلاكسد — Straight Fit",
+    "category": "بناطيل",
+    "price": 890,
+    "oldPrice": 1100,
+    "rating": 4.7,
+    "reviewsCount": 29,
+    "stock": 5,
+    "badge": "وفر 20%",
+    "tagline": "انسيابية فائقة وحرية حركة مطلقة",
+    "description": "بنطال بقصة مستقيمة بدون استك عند الكاحل، يعطي انسيابية وسقوطاً رائعاً فوق السنيكرز، خفيف ومريح طوال اليوم.",
+    "images": [
+      "assets/sample-joggers.jpg",
+      "assets/sample-set.jpg",
+      "assets/sample-hoodie.jpg"
+    ],
+    "image": "assets/sample-joggers.jpg",
+    "featured": false,
+    "sizes": ["S", "M", "L", "XL"],
+    "colors": [
+      { "name": "رمادي ميلانج", "hex": "#9c9b98" },
+      { "name": "أوف وايت كريمي", "hex": "#ece8dd" },
+      { "name": "أسود نقي", "hex": "#111111" }
+    ],
+    "specs": [
+      "القصة: Straight Leg مستقيمة وفضفاضة",
+      "الخامة: قطن ليكرا ناعم ومريح",
+      "الجيوب: جيبان جانبيان عميقان + جيب خلفي مخفي"
+    ],
+    "sizeGuide": [
+      { "size": "M", "chest": "خصر 32-33", "length": "102 سم", "weight": "68 - 78 كجم" },
+      { "size": "L", "chest": "خصر 34-35", "length": "104 سم", "weight": "78 - 88 كجم" }
+    ]
   }
 ]
