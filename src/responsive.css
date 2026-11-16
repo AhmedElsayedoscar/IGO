@@ -178,9 +178,21 @@ body, #root, main, .site-header, .section-wrap { min-width: 0; }
   .product-grid.grid-cols-2,
   .product-grid.grid-cols-3,
   .product-grid.grid-cols-4 {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 18px;
+    grid-auto-flow: column;
+    grid-auto-columns: min(86vw, 360px);
+    grid-template-columns: none;
+    gap: 14px;
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 2px 1px 14px;
+    overscroll-behavior-inline: contain;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 14px;
+    scrollbar-width: thin;
+    -webkit-overflow-scrolling: touch;
   }
+  .product-grid .pro-product-card { min-width: 0; scroll-snap-align: start; }
   .cart-header { height: 64px; padding-inline: 14px; }
   .cart-title-row { gap: 7px; }
   .cart-header h2 { font-size: 16px; }
