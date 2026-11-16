@@ -451,8 +451,8 @@ function Storefront() {
             </a>
           </div>
           <div className="story-image">
-            <img src={ASSET('assets/sample-joggers.jpg')} alt="تفاصيل أقمشة IGO" loading="lazy" />
-            <span>HEAVYWEIGHT 450 GSM</span>
+            <img src={ASSET('assets/igo-logo.jpg')} alt="تفاصيل أقمشة IGO" loading="lazy" />
+            
           </div>
         </section>
 
