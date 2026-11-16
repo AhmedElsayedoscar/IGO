@@ -1110,3 +1110,149 @@
   font-weight: 800;
   color: var(--accent);
 }
+
+
+/* Responsive admin workspace refinements */
+.admin-dashboard-wrapper,
+.admin-body-wrap,
+.admin-dashboard-intro,
+.admin-content-area,
+.admin-panel,
+.admin-card,
+.admin-form-panel,
+.admin-products-panel {
+  min-width: 0;
+}
+
+@media (max-width: 900px) {
+  .admin-navbar {
+    min-height: 72px;
+    height: auto;
+    padding: 12px clamp(16px, 4vw, 30px);
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .admin-nav-left,
+  .admin-nav-right {
+    min-width: 0;
+  }
+
+  .admin-nav-right {
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .admin-body-wrap {
+    padding: 28px clamp(16px, 4vw, 30px) 52px;
+  }
+
+  .admin-title-head {
+    align-items: flex-start;
+  }
+
+  .admin-table-wrap,
+  .table-responsive,
+  .products-table-wrap {
+    max-width: 100%;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+  }
+
+  .admin-kpi-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .admin-navbar {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 12px 14px;
+  }
+
+  .admin-nav-left,
+  .admin-nav-right {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .admin-nav-left {
+    gap: 10px;
+  }
+
+  .admin-tag-pill {
+    font-size: 10px;
+    white-space: nowrap;
+  }
+
+  .admin-nav-right {
+    gap: 8px;
+  }
+
+  .admin-conn-status {
+    min-width: 0;
+    padding: 6px 8px;
+    font-size: 10px;
+  }
+
+  .admin-export-top,
+  .admin-store-btn {
+    min-height: 36px;
+    padding-inline: 9px;
+    font-size: 10px;
+  }
+
+  .admin-body-wrap {
+    padding: 22px 14px 40px;
+  }
+
+  .admin-title-head {
+    gap: 14px;
+  }
+
+  .admin-title-head h1 {
+    font-size: clamp(27px, 8vw, 36px);
+  }
+
+  .admin-add-top-btn {
+    width: 100%;
+  }
+
+  .admin-kpi-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .kpi-card {
+    padding: 14px;
+  }
+
+  .kpi-value {
+    font-size: 23px;
+  }
+
+  .form-row-2,
+  .form-row-3,
+  .form-split-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .admin-tab-list,
+  .admin-tabs {
+    max-width: 100%;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    overscroll-behavior-inline: contain;
+  }
+
+  .admin-tab-list > *,
+  .admin-tabs > * {
+    flex: 0 0 auto;
+  }
+
+  .admin-products-table,
+  .admin-product-table {
+    min-width: 620px;
+  }
+}
