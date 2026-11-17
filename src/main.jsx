@@ -9,6 +9,7 @@ import './styles.css'
 import './react-overrides.css'
 import './auth.css'
 import './admin.css'
+import './user-dashboard.css'
 
 import './responsive.css'
 

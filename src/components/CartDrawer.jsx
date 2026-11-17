@@ -6,7 +6,7 @@ const WHATSAPP_NUMBER = '201000364250'
 const priceText = (p) => `${Number(p || 0).toLocaleString('ar-EG')} ج.م`
 
 export default function CartDrawer() {
-  const { cart, isCartOpen, setIsCartOpen, removeFromCart, updateQuantity, subtotal, totalCount, clearCart } = useCart()
+  const { cart, isCartOpen, setIsCartOpen, removeFromCart, updateQuantity, subtotal, totalCount, clearCart, recordOrder } = useCart()
   const [promo, setPromo] = useState('')
   const [discountPercent, setDiscountPercent] = useState(0)
   const [promoError, setPromoError] = useState('')
@@ -50,6 +50,20 @@ export default function CartDrawer() {
     msg += `يرجى تأكيد الطلب وتحديد عنوان التوصيل.`
 
     window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank', 'noopener,noreferrer')
+
+    if (recordOrder) {
+      recordOrder({
+        items: cart.map((item) => ({
+          name: item.product.name,
+          size: item.size,
+          color: item.color,
+          price: item.product.price,
+          quantity: item.quantity,
+          image: item.product.image,
+        })),
+        total: finalTotal,
+      })
+    }
   }
 
   return (

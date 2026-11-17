@@ -65,7 +65,7 @@ export default function AuthPage({ initialMode = 'login' }) {
               <AuthForm
                 initialMode={initialMode}
                 onSuccess={() => {
-                  window.location.href = '/'
+                  window.location.href = '/profile'
                 }}
               />
             </div>

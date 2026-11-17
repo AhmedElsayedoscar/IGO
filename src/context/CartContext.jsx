@@ -20,6 +20,33 @@ export function CartProvider({ children }) {
       return []
     }
   })
+  const [orders, setOrders] = useState(() => {
+    try {
+      const saved = localStorage.getItem('igo_orders')
+      if (saved) return JSON.parse(saved)
+      return [
+        {
+          id: 'ORD-9821',
+          date: '15 نوفمبر 2026',
+          status: 'تم التوصيل بنجاح ✅',
+          items: [
+            {
+              name: 'هودي أوفرسايز رملي — Heavyweight',
+              size: 'L',
+              color: 'رملي هادئ',
+              price: 1290,
+              quantity: 1,
+              image: 'assets/sample-hoodie.jpg',
+            },
+          ],
+          total: 1290,
+          shippingAddress: 'المعادي، القاهرة',
+        },
+      ]
+    } catch {
+      return []
+    }
+  })
 
   useEffect(() => {
     try {
@@ -36,6 +63,29 @@ export function CartProvider({ children }) {
       console.error(e)
     }
   }, [wishlist])
+
+  useEffect(() => {
+    try {
+      localStorage.setItem('igo_orders', JSON.stringify(orders))
+    } catch (e) {
+      console.error(e)
+    }
+  }, [orders])
+
+  const recordOrder = (orderData) => {
+    const newOrder = {
+      id: `ORD-${Math.floor(1000 + Math.random() * 9000)}`,
+      date: new Date().toLocaleDateString('ar-EG', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+      }),
+      status: 'قيد التجهيز 📦',
+      ...orderData,
+    }
+    setOrders((prev) => [newOrder, ...prev])
+    return newOrder
+  }
 
   const addToCart = (product, size = 'M', color = '', quantity = 1) => {
     const chosenColor = color || (product.colors && product.colors[0]) || 'افتراضي'
@@ -111,6 +161,8 @@ export function CartProvider({ children }) {
         clearCart,
         wishlist,
         toggleWishlist,
+        orders,
+        recordOrder,
         subtotal,
         totalCount,
       }}

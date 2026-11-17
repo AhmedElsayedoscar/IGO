@@ -43,7 +43,13 @@ export default function AuthModal({ isOpen, onClose, initialMode = 'login' }) {
           <h2>مرحباً بك في IGO</h2>
           <p>سجّل دخولك لمتابعة طلباتك والحصول على أحدث العروض والقطع الحصرية.</p>
         </div>
-        <AuthForm initialMode={initialMode} onSuccess={onClose} />
+        <AuthForm
+          initialMode={initialMode}
+          onSuccess={() => {
+            onClose()
+            window.location.href = '/profile'
+          }}
+        />
       </div>
     </dialog>
   )

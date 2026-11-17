@@ -164,6 +164,15 @@ export function AuthProvider({ children }) {
     }
   }
 
+  const updateUser = (updatedFields) => {
+    setUser((prev) => {
+      if (!prev) return null
+      const nextUser = { ...prev, ...updatedFields }
+      localStorage.setItem('igo_user', JSON.stringify(nextUser))
+      return nextUser
+    })
+  }
+
   const logout = () => {
     setUser(null)
     setToken(null)
@@ -181,6 +190,7 @@ export function AuthProvider({ children }) {
         login,
         register,
         loginWithGoogle,
+        updateUser,
         logout,
         isAuthenticated: !!user,
       }}

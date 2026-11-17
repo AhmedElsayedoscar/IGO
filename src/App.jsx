@@ -9,6 +9,7 @@ import CartDrawer from './components/CartDrawer'
 import ProductDetailModal from './components/ProductDetailModal'
 import ProductCard from './components/ProductCard'
 import AdminDashboard from './components/AdminDashboard'
+import UserDashboard from './components/UserDashboard'
 import { ASSET } from './utils/asset'
 
 import { motion, useReducedMotion } from 'framer-motion'
@@ -34,7 +35,7 @@ function SiteHeader({ admin = false, onOpenAuth }) {
   const [menuOpen, setMenuOpen] = useState(false)
   const [userMenuOpen, setUserMenuOpen] = useState(false)
   const { user, logout } = useAuth()
-  const { totalCount, setIsCartOpen, wishlist } = useCart()
+  const { totalCount, setIsCartOpen, wishlist, orders } = useCart()
   const hello = 'مرحباً IGO، عايز أعرف تفاصيل المنتجات وتشكيلة الموسم الجديد'
 
   if (admin) {
@@ -55,7 +56,7 @@ function SiteHeader({ admin = false, onOpenAuth }) {
         <a href="/#products" onClick={() => setMenuOpen(false)}>المجموعة الجديدة</a>
         <a href="/#about" onClick={() => setMenuOpen(false)}>عن IGO</a>
         <a href="/#reviews" onClick={() => setMenuOpen(false)}>آراء العملاء</a>
-        <a href="/login" onClick={() => setMenuOpen(false)}>حسابي</a>
+        <a href={user ? '/profile' : '/login'} onClick={() => setMenuOpen(false)}>حسابي</a>
       </nav>
 
       <div className="header-actions">
@@ -115,6 +116,15 @@ function SiteHeader({ admin = false, onOpenAuth }) {
                 <div style={{ padding: '8px 14px', borderBottom: '1px solid var(--line)', fontSize: '11px', color: 'var(--muted)' }}>
                   {user.email}
                 </div>
+                <a className="user-dropdown-item" href="/profile">
+                  لوحة حسابي (Dashboard) 👤
+                </a>
+                <a className="user-dropdown-item" href="/profile#orders">
+                  طلباتي ({orders?.length || 0}) 🛍️
+                </a>
+                <a className="user-dropdown-item" href="/profile#wishlist">
+                  المفضلة ({wishlist?.length || 0}) ♥
+                </a>
                 {user.role === 'admin' && (
                   <a className="user-dropdown-item" href="/admin">
                     لوحة الإدارة ↗
@@ -662,9 +672,24 @@ function AdminPage() {
   return <AdminDashboard />
 }
 
+function ProfilePage() {
+  const { user } = useAuth()
+  useEffect(() => {
+    document.title = 'لوحة تحكم العضو | IGO Member Dashboard'
+    window.scrollTo(0, 0)
+  }, [])
+
+  if (!user) {
+    return <AuthPage initialMode="login" />
+  }
+
+  return <UserDashboard />
+}
+
 export default function App() {
   const path = window.location.pathname.replace(/\/+$/, '')
   if (path === '/admin' || path === '/admin.html') return <AdminPage />
+  if (path === '/profile' || path === '/account' || path === '/dashboard') return <ProfilePage />
   if (path === '/login') return <AuthPage initialMode="login" />
   if (path === '/register') return <AuthPage initialMode="register" />
   if (path === '/auth') return <AuthPage initialMode="login" />
