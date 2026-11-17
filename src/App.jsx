@@ -450,9 +450,14 @@ function Storefront() {
               <span aria-hidden="true">↗</span>
             </a>
           </div>
-          <div className="story-image">
-            <img src={ASSET('assets/igo-logo.jpg')} alt="تفاصيل أقمشة IGO" loading="lazy" />
-            
+          <div className="story-image logo-showcase">
+            <span className="logo-showcase-halo" aria-hidden="true" />
+            <div className="logo-showcase-card">
+              <span className="logo-showcase-label" aria-hidden="true"><i>01</i> / SIGNATURE</span>
+              <img src={ASSET('assets/igo-logo.jpg')} alt="الشعار الرسمي لعلامة IGO Clothing Brand" loading="lazy" />
+              <span className="logo-showcase-caption" aria-hidden="true"><i /> ORIGINAL BRAND MARK</span>
+            </div>
+            <span className="logo-showcase-side-note" aria-hidden="true">IGO · CLOTHING BRAND</span>
           </div>
         </section>
 

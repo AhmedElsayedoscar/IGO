@@ -9,6 +9,8 @@ import './react-overrides.css'
 import './auth.css'
 import './admin.css'
 
+import './responsive.css'
+
 createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <AuthProvider>

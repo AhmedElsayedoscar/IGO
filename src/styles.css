@@ -154,6 +154,13 @@ textarea:focus-visible {
   border-radius: var(--radius-sm);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
   border: 1px solid rgba(197, 160, 89, 0.2);
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.brand:hover img {
+  transform: translateY(-1px);
+  border-color: rgba(197, 160, 89, 0.58);
+  box-shadow: 0 0 0 3px rgba(197, 160, 89, 0.07), 0 6px 18px rgba(0, 0, 0, 0.4);
 }
 
 .brand-copy {
@@ -925,7 +932,7 @@ textarea:focus-visible {
 }
 
 .story-image {
-  height: 270px;
+  height: 310px;
   position: relative;
   overflow: hidden;
   border-radius: var(--radius-sm);
@@ -938,6 +945,144 @@ textarea:focus-visible {
   height: 100%;
   object-fit: cover;
   filter: saturate(0.8);
+}
+
+.story-image.logo-showcase {
+  isolation: isolate;
+  background:
+    radial-gradient(ellipse at 50% 44%, rgba(197, 160, 89, 0.19), transparent 46%),
+    linear-gradient(145deg, #25251f 0%, #121310 62%, #1d1d18 100%);
+  border: 1px solid rgba(197, 160, 89, 0.42);
+  box-shadow: inset 0 0 0 7px rgba(255, 255, 255, 0.025), 0 24px 60px rgba(0, 0, 0, 0.36);
+}
+
+.story-image.logo-showcase::before {
+  content: '';
+  position: absolute;
+  inset: 11px;
+  z-index: 0;
+  border: 1px solid rgba(244, 239, 230, 0.11);
+  pointer-events: none;
+}
+
+.story-image.logo-showcase::after {
+  content: '';
+  position: absolute;
+  inset: 12% 11%;
+  z-index: 0;
+  border: 1px solid rgba(197, 160, 89, 0.25);
+  transform: rotate(-8deg);
+  pointer-events: none;
+}
+
+.logo-showcase-halo {
+  position: absolute;
+  z-index: 0;
+  width: 72%;
+  aspect-ratio: 1;
+  border: 1px solid rgba(197, 160, 89, 0.32);
+  border-radius: 50%;
+  box-shadow: 0 0 46px rgba(197, 160, 89, 0.12), inset 0 0 36px rgba(197, 160, 89, 0.07);
+  pointer-events: none;
+}
+
+.logo-showcase-card {
+  position: relative;
+  z-index: 1;
+  width: 78%;
+  height: 84%;
+  min-height: 238px;
+  overflow: hidden;
+  background: #11120f;
+  border: 1px solid rgba(244, 239, 230, 0.38);
+  box-shadow: 0 16px 38px rgba(0, 0, 0, 0.48), 0 0 0 5px rgba(255, 255, 255, 0.025);
+  transform: perspective(900px) rotateY(-4deg) rotateX(1deg);
+  transition: transform 0.55s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.55s ease;
+}
+
+.logo-showcase-card::after {
+  content: '';
+  position: absolute;
+  inset: 9px;
+  z-index: 1;
+  border: 1px solid rgba(244, 239, 230, 0.16);
+  pointer-events: none;
+}
+
+.story-image.logo-showcase .logo-showcase-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  filter: contrast(1.04) brightness(1.04);
+  transition: transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.story-image.logo-showcase .logo-showcase-label,
+.story-image.logo-showcase .logo-showcase-caption {
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  color: #eee7da;
+  font: 600 8px/1.2 var(--latin), sans-serif;
+  letter-spacing: 0.16em;
+  background: rgba(12, 13, 11, 0.72);
+  backdrop-filter: blur(6px);
+}
+
+.story-image.logo-showcase .logo-showcase-label {
+  top: 14px;
+  right: auto;
+  bottom: auto;
+  left: 14px;
+  gap: 7px;
+  padding: 7px 9px;
+  border: 1px solid rgba(197, 160, 89, 0.34);
+}
+
+.logo-showcase-label i {
+  color: var(--accent-hover);
+  font-style: normal;
+}
+
+.story-image.logo-showcase .logo-showcase-caption {
+  right: 15px;
+  bottom: 13px;
+  left: 15px;
+  justify-content: space-between;
+  padding: 10px 2px 0;
+  border-radius: 0;
+  border-top: 1px solid rgba(244, 239, 230, 0.28);
+  letter-spacing: 0.13em;
+}
+
+.logo-showcase-caption i {
+  width: 17px;
+  height: 1px;
+  background: var(--accent);
+}
+
+.story-image.logo-showcase .logo-showcase-side-note {
+  position: absolute;
+  right: 16px;
+  bottom: 12px;
+  z-index: 2;
+  padding: 4px 7px;
+  color: rgba(244, 239, 230, 0.57);
+  background: rgba(15, 16, 14, 0.68);
+  font: 600 7px/1.2 var(--latin), sans-serif;
+  letter-spacing: 0.13em;
+  writing-mode: vertical-rl;
+}
+
+.logo-showcase:hover .logo-showcase-card {
+  transform: perspective(900px) rotateY(0) rotateX(0) translateY(-3px);
+  box-shadow: 0 22px 48px rgba(0, 0, 0, 0.52), 0 0 0 5px rgba(255, 255, 255, 0.035);
+}
+
+.logo-showcase:hover .logo-showcase-card img {
+  transform: scale(1.035);
 }
 
 .story-image span {
