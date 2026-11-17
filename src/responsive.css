@@ -135,7 +135,7 @@ body, #root, main, .site-header, .section-wrap { min-width: 0; }
   .story-copy { max-width: 620px; }
   .story-copy h2 { font-size: clamp(36px, 8vw, 48px); }
   .story-copy p { font-size: 14px; }
-  .story-image { width: 100%; height: clamp(170px, 45vw, 260px); }
+  .story-image { width: 100%; height: clamp(240px, 66vw, 320px); }
   .reviews-section { padding: 58px clamp(16px, 4vw, 28px); }
   .reviews-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 24px; }
   .review-card { min-width: 0; padding: 18px; }
