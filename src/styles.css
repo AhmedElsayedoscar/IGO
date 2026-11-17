@@ -1012,7 +1012,7 @@ textarea:focus-visible {
 .story-image.logo-showcase .logo-showcase-card img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
   filter: contrast(1.04) brightness(1.04);
   transition: transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
