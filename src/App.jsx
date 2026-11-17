@@ -613,8 +613,8 @@ function Storefront() {
             <ul>
               <li><a href="/login">تسجيل الدخول</a></li>
               <li><a href="/register">إنشاء حساب جديد</a></li>
+              <li><a href="/profile">لوحة تحكم العضو</a></li>
               <li><a href={`https://wa.me/${WHATSAPP_NUMBER}`} target="_blank" rel="noreferrer">سياسة الاستبدال والاسترجاع</a></li>
-              <li><a href="/admin">لوحة إدارة المتجر</a></li>
             </ul>
           </div>
 

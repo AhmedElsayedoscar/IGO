@@ -749,6 +749,20 @@
   text-align: right;
 }
 
+.admin-login-alert.is-lockout {
+  background: rgba(220, 53, 69, 0.22);
+  border-right: 3px solid #ff3d3d;
+  color: #ffaaaa;
+  font-weight: 700;
+  padding: 14px;
+}
+
+.admin-login-alert.is-warning {
+  background: #fff7e6;
+  border-right: 3px solid #f59e0b;
+  color: #92400e;
+}
+
 .admin-login-form {
   text-align: right;
   display: flex;
