@@ -132,9 +132,11 @@ export default function UserDashboard() {
           <a className="button button-outline-dark" href="/">
             تصفح المتجر ↗
           </a>
-          <a className="button button-outline-dark" href="/admin">
-            لوحة الإدارة ⚙️
-          </a>
+          {user.role === 'admin' && (
+            <a className="button button-outline-dark" href="/admin">
+              لوحة الإدارة ⚙️
+            </a>
+          )}
           {authUser ? (
             <button
               type="button"
