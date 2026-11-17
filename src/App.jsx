@@ -55,8 +55,8 @@ function SiteHeader({ admin = false, onOpenAuth }) {
         <a className="active" href="/#home" onClick={() => setMenuOpen(false)}>الرئيسية</a>
         <a href="/#products" onClick={() => setMenuOpen(false)}>المجموعة الجديدة</a>
         <a href="/#about" onClick={() => setMenuOpen(false)}>عن IGO</a>
-        <a href="/#reviews" onClick={() => setMenuOpen(false)}>آراء العملاء</a>
-        <a href={user ? '/profile' : '/login'} onClick={() => setMenuOpen(false)}>حسابي</a>
+        <a href="/profile" onClick={() => setMenuOpen(false)}>لوحة العضو 👤</a>
+        <a href="/admin" onClick={() => setMenuOpen(false)}>لوحة الإدارة ⚙️</a>
       </nav>
 
       <div className="header-actions">
@@ -673,25 +673,49 @@ function AdminPage() {
 }
 
 function ProfilePage() {
-  const { user } = useAuth()
   useEffect(() => {
     document.title = 'لوحة تحكم العضو | IGO Member Dashboard'
     window.scrollTo(0, 0)
   }, [])
 
-  if (!user) {
-    return <AuthPage initialMode="login" />
-  }
-
   return <UserDashboard />
 }
 
+function getRoute() {
+  const p = window.location.pathname.replace(/\/+$/, '')
+  const h = window.location.hash.replace(/^#\/?/, '').split('?')[0]
+  if (p === '/admin' || p === '/admin.html' || h === 'admin') return 'admin'
+  if (
+    p === '/profile' ||
+    p === '/account' ||
+    p === '/dashboard' ||
+    h === 'profile' ||
+    h === 'dashboard' ||
+    h === 'account'
+  )
+    return 'profile'
+  if (p === '/login' || h === 'login') return 'login'
+  if (p === '/register' || h === 'register') return 'register'
+  if (p === '/auth' || h === 'auth') return 'login'
+  return 'store'
+}
+
 export default function App() {
-  const path = window.location.pathname.replace(/\/+$/, '')
-  if (path === '/admin' || path === '/admin.html') return <AdminPage />
-  if (path === '/profile' || path === '/account' || path === '/dashboard') return <ProfilePage />
-  if (path === '/login') return <AuthPage initialMode="login" />
-  if (path === '/register') return <AuthPage initialMode="register" />
-  if (path === '/auth') return <AuthPage initialMode="login" />
+  const [route, setRoute] = useState(getRoute)
+
+  useEffect(() => {
+    const handleNav = () => setRoute(getRoute())
+    window.addEventListener('popstate', handleNav)
+    window.addEventListener('hashchange', handleNav)
+    return () => {
+      window.removeEventListener('popstate', handleNav)
+      window.removeEventListener('hashchange', handleNav)
+    }
+  }, [])
+
+  if (route === 'admin') return <AdminPage />
+  if (route === 'profile') return <ProfilePage />
+  if (route === 'login') return <AuthPage initialMode="login" />
+  if (route === 'register') return <AuthPage initialMode="register" />
   return <Storefront />
 }

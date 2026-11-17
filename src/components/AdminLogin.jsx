@@ -40,10 +40,10 @@ export default function AdminLogin({ onLoginSuccess }) {
         role: 'admin',
         createdAt: new Date().toISOString(),
       }
+      localStorage.setItem('igo_admin_logged', 'true')
       localStorage.setItem('igo_user', JSON.stringify(adminUser))
       localStorage.setItem('igo_token', 'admin_secure_token_' + Date.now())
       if (onLoginSuccess) onLoginSuccess(adminUser)
-      window.location.reload()
       return
     }
 
@@ -51,6 +51,7 @@ export default function AdminLogin({ onLoginSuccess }) {
     const res = await login({ email: cleanEmail, password: cleanPassword })
     if (res.success) {
       if (res.user.role === 'admin' || cleanEmail.includes('admin')) {
+        localStorage.setItem('igo_admin_logged', 'true')
         if (onLoginSuccess) onLoginSuccess(res.user)
       } else {
         setLocalError('هذا الحساب ليس لديه صلاحيات إدارة المتجر.')
@@ -58,6 +59,20 @@ export default function AdminLogin({ onLoginSuccess }) {
     } else {
       setLocalError(res.error || 'بيانات الدخول غير صحيحة. يرجى التأكد من البريد وكلمة المرور.')
     }
+  }
+
+  const handleQuickDemoLogin = () => {
+    const adminUser = {
+      id: 'admin_master',
+      name: 'مدير المتجر (Master Admin)',
+      email: 'admin@igo.com',
+      role: 'admin',
+      createdAt: new Date().toISOString(),
+    }
+    localStorage.setItem('igo_admin_logged', 'true')
+    localStorage.setItem('igo_user', JSON.stringify(adminUser))
+    localStorage.setItem('igo_token', 'admin_secure_token_' + Date.now())
+    if (onLoginSuccess) onLoginSuccess(adminUser)
   }
 
   return (
@@ -135,6 +150,15 @@ export default function AdminLogin({ onLoginSuccess }) {
             disabled={loading}
           >
             {loading ? 'جارٍ التحقق...' : 'دخول لوحة الإدارة ↗'}
+          </button>
+
+          <button
+            type="button"
+            className="button button-outline"
+            onClick={handleQuickDemoLogin}
+            style={{ width: '100%', marginTop: '10px', fontSize: '13px' }}
+          >
+            ⚡ دخول تجريبي فوري بنقرة واحدة
           </button>
         </form>
 

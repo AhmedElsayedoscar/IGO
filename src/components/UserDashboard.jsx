@@ -8,9 +8,19 @@ const priceText = (p) => `${Number(p || 0).toLocaleString('ar-EG')} ج.م`
 const WHATSAPP_NUMBER = '201000364250'
 
 export default function UserDashboard() {
-  const { user, updateUser, logout } = useAuth()
+  const { user: authUser, updateUser, logout } = useAuth()
   const { cart, wishlist, toggleWishlist, addToCart, orders } = useCart()
   const { products } = useProducts()
+
+  // Safe fallback to interactive demo user if guest
+  const user = authUser || {
+    id: 'demo-user',
+    name: 'أحمد السيد (عضو IGO)',
+    email: 'member@igo.com',
+    phone: '01000364250',
+    role: 'customer',
+    isDemo: true,
+  }
 
   const [activeTab, setActiveTab] = useState(() => {
     const hash = window.location.hash.replace('#', '')
@@ -22,9 +32,9 @@ export default function UserDashboard() {
   const [toastMsg, setToastMsg] = useState('')
 
   // Profile Edit State
-  const [name, setName] = useState(user?.name || '')
-  const [phone, setPhone] = useState(user?.phone || '')
-  const [email] = useState(user?.email || '')
+  const [name, setName] = useState(user.name || '')
+  const [phone, setPhone] = useState(user.phone || '')
+  const [email] = useState(user.email || '')
 
   // Password Edit State
   const [currentPass, setCurrentPass] = useState('')
@@ -96,8 +106,10 @@ export default function UserDashboard() {
     showToast('✓ تم حفظ عنوان التوصيل المفضل بنجاح!')
   }
 
-  // Wishlist products
-  const wishlistProducts = products.filter((p) => wishlist.includes(p.id))
+  // Wishlist products safely filtered
+  const wishlistProducts = (products || []).filter(
+    (p) => Array.isArray(wishlist) && wishlist.includes(p.id)
+  )
 
   const copyVipCode = () => {
     navigator.clipboard?.writeText('IGO-VIP10')
@@ -120,18 +132,64 @@ export default function UserDashboard() {
           <a className="button button-outline-dark" href="/">
             تصفح المتجر ↗
           </a>
-          <button
-            type="button"
-            className="button button-quiet is-logout"
-            onClick={() => {
-              logout()
-              window.location.href = '/'
-            }}
-          >
-            تسجيل الخروج ✕
-          </button>
+          <a className="button button-outline-dark" href="/admin">
+            لوحة الإدارة ⚙️
+          </a>
+          {authUser ? (
+            <button
+              type="button"
+              className="button button-quiet is-logout"
+              onClick={() => {
+                logout()
+                window.location.href = '/'
+              }}
+            >
+              تسجيل الخروج ✕
+            </button>
+          ) : (
+            <a className="button button-accent" href="/login" style={{ minHeight: '34px', fontSize: '12px' }}>
+              تسجيل الدخول 👤
+            </a>
+          )}
         </div>
       </header>
+
+      {/* Guest / Demo Notice Banner if not signed in */}
+      {!authUser && (
+        <div style={{
+          background: 'linear-gradient(90deg, #1f201d 0%, #2b281f 100%)',
+          color: '#fff',
+          padding: '10px 24px',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          flexWrap: 'wrap',
+          gap: '12px',
+          fontSize: '13px',
+          borderBottom: '1px solid var(--accent, #c5a059)'
+        }}>
+          <div>
+            <span style={{ color: 'var(--accent, #c5a059)', fontWeight: 'bold', marginLeft: '6px' }}>✦ وضع المعاينة المباشر:</span>
+            <span>أنت تتصفح لوحة تحكم العضو حالياً بحساب تجريبي تفاعلي. يمكنك تجربة كافة الأقسام وحفظ العنوان واستعراض الطلبات والمفضلة.</span>
+          </div>
+          <div style={{ display: 'flex', gap: '8px' }}>
+            <a
+              href="/login"
+              className="button button-accent"
+              style={{ minHeight: '30px', padding: '4px 12px', fontSize: '11px' }}
+            >
+              تسجيل الدخول بحسابك ↗
+            </a>
+            <a
+              href="/register"
+              className="button button-outline-dark"
+              style={{ minHeight: '30px', padding: '4px 12px', fontSize: '11px' }}
+            >
+              حساب جديد
+            </a>
+          </div>
+        </div>
+      )}
 
       {/* Floating Toast */}
       {toastMsg && (
