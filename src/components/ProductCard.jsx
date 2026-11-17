@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useCart } from '../context/CartContext'
 import CountdownTimer from './CountdownTimer'
 import { ASSET } from '../utils/asset'
+import { motion, useReducedMotion } from 'framer-motion'
 const priceText = (p) => `${Number(p || 0).toLocaleString('ar-EG')} ج.م`
 
 export default function ProductCard({ product, onQuickView }) {
@@ -9,6 +10,7 @@ export default function ProductCard({ product, onQuickView }) {
   const [activeImageIndex, setActiveImageIndex] = useState(0)
   const [selectedColorIndex, setSelectedColorIndex] = useState(0)
   const [addedSize, setAddedSize] = useState('')
+  const prefersReducedMotion = useReducedMotion()
 
   const isFavorite = wishlist.includes(product.id)
   const images = product.images && product.images.length > 0 ? product.images : [product.image]
@@ -29,7 +31,16 @@ export default function ProductCard({ product, onQuickView }) {
   }
 
   return (
-    <article className="pro-product-card" onClick={() => onQuickView(product)}>
+    <motion.article
+      className="pro-product-card"
+      onClick={() => onQuickView(product)}
+      initial={prefersReducedMotion ? false : { opacity: 0, y: 18 }}
+      whileInView={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.12 }}
+      transition={prefersReducedMotion ? { duration: 0 } : { duration: 0.46, ease: [0.22, 0.65, 0.3, 1] }}
+      whileHover={prefersReducedMotion ? undefined : { y: -5, transition: { duration: 0.22, ease: 'easeOut' } }}
+      whileTap={prefersReducedMotion ? undefined : { scale: 0.995 }}
+    >
       {/* Image Wrap */}
       <div
         className="pro-image-wrap"
@@ -47,6 +58,7 @@ export default function ProductCard({ product, onQuickView }) {
 
         {/* Badges */}
         <div className="pro-card-badges">
+          <span className="pro-badge pro-badge-winter">WINTER EDIT</span>
           {product.badge && <span className="pro-badge pro-badge-main">{product.badge}</span>}
           {discountPercent > 0 && (
             <span className="pro-badge pro-badge-discount">-{discountPercent}%</span>
@@ -155,7 +167,6 @@ export default function ProductCard({ product, onQuickView }) {
           </button>
         </div>
       </div>
-    </article>
+    </motion.article>
   )
 }
-
