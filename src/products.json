@@ -216,5 +216,81 @@
       { "size": "M", "chest": "خصر 32-33", "length": "102 سم", "weight": "68 - 78 كجم" },
       { "size": "L", "chest": "خصر 34-35", "length": "104 سم", "weight": "78 - 88 كجم" }
     ]
+  },
+  {
+    "id": "igo-sport-compression-set",
+    "name": "طقم تدريب رياضي أكتيف برو — Active Sport Set",
+    "category": "ملابس رياضية",
+    "price": 1490,
+    "oldPrice": 1800,
+    "rating": 4.9,
+    "reviewsCount": 31,
+    "stock": 4,
+    "badge": "الأكثر مبيعاً للتمارين",
+    "tagline": "قماش تنفسي مطاطي طارد للرطوبة والعرق",
+    "description": "طقم رياضي احترافي عالي الأداء يتكون من تيشيرت خفيف الوزن وسروال تدريب مرن مزود بجيوب بسحاب لحفظ الموبايل والمفاتيح أثناء الجري والتمارين الشاقة.",
+    "images": [
+      "assets/sample-set.jpg",
+      "assets/sample-joggers.jpg",
+      "assets/sample-hoodie.jpg"
+    ],
+    "image": "assets/sample-set.jpg",
+    "featured": true,
+    "sizes": ["S", "M", "L", "XL", "XXL"],
+    "colors": [
+      { "name": "أسود كاربون", "hex": "#1a1a18" },
+      { "name": "رمادي حديدي", "hex": "#4a4d4e" },
+      { "name": "أزرق كحلي رياضي", "hex": "#172338" }
+    ],
+    "specs": [
+      "الخامة: نسيج دراي فيت 4-Way Stretch فائق المرونة",
+      "التهوية: فتحات ميكروية جانبية لتنظيم حرارة الجسم",
+      "الجيوب: جيبان جانبيان بسحاب مخفي عازل للمياه",
+      "العناية: سريع الجفاف بعد الغسيل ومقاوم للروائح"
+    ],
+    "sizeGuide": [
+      { "size": "S", "chest": "102 سم", "length": "68 سم", "weight": "55 - 65 كجم" },
+      { "size": "M", "chest": "108 سم", "length": "70 سم", "weight": "65 - 75 كجم" },
+      { "size": "L", "chest": "114 سم", "length": "72 سم", "weight": "75 - 85 كجم" },
+      { "size": "XL", "chest": "120 سم", "length": "74 سم", "weight": "85 - 95 كجم" },
+      { "size": "XXL", "chest": "126 سم", "length": "76 سم", "weight": "95 - 105 كجم" }
+    ],
+    "discountEndsAt": "2026-11-20T23:59:59.000Z"
+  },
+  {
+    "id": "igo-sport-shorts-performance",
+    "name": "شورت تمارين مبطن 2-in-1 مع جيب مخفي للموبايل",
+    "category": "ملابس رياضية",
+    "price": 690,
+    "oldPrice": 850,
+    "rating": 4.8,
+    "reviewsCount": 18,
+    "stock": 6,
+    "badge": "عرض محدود",
+    "tagline": "طبقة داخلية مانعة للاحتكاك مع مرونة كاملة",
+    "description": "شورت مصمم خصيصاً للجيم والجري بطبقتين: طبقة داخلية كومبريشن داعمة للعضلات وطبقة خارجية خفيفة وسريعة الجفاف مع فتحات تهوية ليزر.",
+    "images": [
+      "assets/sample-joggers.jpg",
+      "assets/sample-set.jpg"
+    ],
+    "image": "assets/sample-joggers.jpg",
+    "featured": false,
+    "sizes": ["M", "L", "XL", "XXL"],
+    "colors": [
+      { "name": "أسود مع بطانة رصاصي", "hex": "#1e1e1e" },
+      { "name": "زيتي عسكري", "hex": "#3d4235" }
+    ],
+    "specs": [
+      "التصميم: 2 في 1 (شورت خارجي خفيف + لاينر ضاغط داخلي)",
+      "الجيب الداخلي: مخصص لحمل الموبايل بثبات أثناء الحركة",
+      "الخصر: استك مطاطي عريض مع رباط شد داخلي",
+      "حلقة مخصصة لتعليق الفوطة الرياضية"
+    ],
+    "sizeGuide": [
+      { "size": "M", "chest": "خصر 30-32", "length": "46 سم", "weight": "65 - 75 كجم" },
+      { "size": "L", "chest": "خصر 32-34", "length": "48 سم", "weight": "75 - 85 كجم" },
+      { "size": "XL", "chest": "خصر 34-36", "length": "50 سم", "weight": "85 - 95 كجم" }
+    ],
+    "discountEndsAt": "2026-11-22T18:00:00.000Z"
   }
 ]

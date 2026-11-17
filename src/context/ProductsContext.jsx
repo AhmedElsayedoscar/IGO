@@ -9,7 +9,13 @@ export function ProductsProvider({ children }) {
   const [products, setProducts] = useState(() => {
     try {
       const saved = localStorage.getItem('igo_products')
-      return saved ? JSON.parse(saved) : initialProducts
+      if (saved) {
+        const parsed = JSON.parse(saved)
+        const existingIds = new Set(parsed.map((p) => p.id))
+        const missing = initialProducts.filter((p) => !existingIds.has(p.id))
+        return [...parsed, ...missing]
+      }
+      return initialProducts
     } catch {
       return initialProducts
     }

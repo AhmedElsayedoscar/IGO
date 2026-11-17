@@ -477,6 +477,7 @@ export default function AdminDashboard() {
                   <option value="هوديز">هوديز</option>
                   <option value="أطقم">أطقم</option>
                   <option value="بناطيل">بناطيل</option>
+                  <option value="ملابس رياضية">ملابس رياضية</option>
                 </select>
 
                 <button
@@ -637,6 +638,7 @@ export default function AdminDashboard() {
                           <option value="هوديز">هوديز</option>
                           <option value="أطقم">أطقم</option>
                           <option value="بناطيل">بناطيل</option>
+                          <option value="ملابس رياضية">ملابس رياضية (Sportswear)</option>
                           <option value="تيشيرتات">تيشيرتات</option>
                           <option value="جاكيتات">جاكيتات</option>
                           <option value="إكسسوارات">إكسسوارات</option>
