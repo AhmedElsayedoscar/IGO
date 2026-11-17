@@ -9,10 +9,10 @@ import CartDrawer from './components/CartDrawer'
 import ProductDetailModal from './components/ProductDetailModal'
 import ProductCard from './components/ProductCard'
 import AdminDashboard from './components/AdminDashboard'
+import { ASSET } from './utils/asset'
 
 const WHATSAPP_NUMBER = '201000364250'
-const CATEGORIES = ['الكل', 'هوديز', 'أطقم', 'بناطيل']
-const ASSET = (path) => `${import.meta.env.BASE_URL}${String(path).replace(/^\/+/, '')}`
+const CATEGORIES = ['الكل', 'هوديز', 'أطقم', 'بناطيل', 'ملابس رياضية']
 const priceText = (price) => `${Number(price || 0).toLocaleString('ar-EG')} ج.م`
 const whatsappLink = (message) => `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`
 
@@ -180,7 +180,12 @@ function Storefront() {
   const visibleProducts = useMemo(() => {
     const normalized = query.trim().toLocaleLowerCase('ar')
     let list = products.filter((product) => {
-      const categoryMatches = activeFilter === 'الكل' || product.category === activeFilter
+      const categoryMatches =
+        activeFilter === 'الكل' ||
+        product.category === activeFilter ||
+        (activeFilter === 'ملابس رياضية' &&
+          (product.category?.includes('رياض') || product.category === 'ملابس رياضية'))
+
       const text = `${product.name || ''} ${product.category || ''} ${product.description || ''} ${product.tagline || ''}`.toLocaleLowerCase('ar')
       return categoryMatches && (!normalized || text.includes(normalized))
     })
@@ -331,18 +336,30 @@ function Storefront() {
 
           {/* Category Filter Chips */}
           <div className="filter-row" role="group" aria-label="تصفية المنتجات">
-            {CATEGORIES.map((category) => (
-              <button
-                key={category}
-                className={`filter-chip${activeFilter === category ? ' is-selected' : ''}`}
-                type="button"
-                aria-pressed={activeFilter === category}
-                onClick={() => setActiveFilter(category)}
-              >
-                {category}
-                {category === 'الكل' && <span>{String(products.length).padStart(2, '0')}</span>}
-              </button>
-            ))}
+            {CATEGORIES.map((category) => {
+              const count =
+                category === 'الكل'
+                  ? products.length
+                  : products.filter(
+                      (p) =>
+                        p.category === category ||
+                        (category === 'ملابس رياضية' &&
+                          (p.category?.includes('رياض') || p.category === 'ملابس رياضية'))
+                    ).length
+
+              return (
+                <button
+                  key={category}
+                  className={`filter-chip${activeFilter === category ? ' is-selected' : ''}`}
+                  type="button"
+                  aria-pressed={activeFilter === category}
+                  onClick={() => setActiveFilter(category)}
+                >
+                  {category}
+                  {count > 0 && <span>{String(count).padStart(2, '0')}</span>}
+                </button>
+              )
+            })}
           </div>
 
           {/* Pro Catalog Toolbar */}
