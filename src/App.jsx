@@ -10,6 +10,8 @@ import ProductDetailModal from './components/ProductDetailModal'
 import ProductCard from './components/ProductCard'
 import AdminDashboard from './components/AdminDashboard'
 
+import { motion, useReducedMotion } from 'framer-motion'
+
 const WHATSAPP_NUMBER = '201000364250'
 const CATEGORIES = ['الكل', 'هوديز', 'أطقم', 'بناطيل']
 const ASSET = (path) => `${import.meta.env.BASE_URL}${String(path).replace(/^\/+/, '')}`
@@ -176,6 +178,7 @@ function Storefront() {
   const [authModalOpen, setAuthModalOpen] = useState(false)
   const [toast, setToast] = useState('')
   const { wishlist } = useCart()
+  const prefersReducedMotion = useReducedMotion()
 
   const visibleProducts = useMemo(() => {
     const normalized = query.trim().toLocaleLowerCase('ar')
@@ -211,7 +214,7 @@ function Storefront() {
   }
 
   return (
-    <>
+    <div className="winter-storefront">
       {/* Top Banner */}
       <div className="announcement">
         <span className="announcement-dot" />
@@ -224,19 +227,23 @@ function Storefront() {
       <main>
         {/* Hero Section */}
         <section className="hero" id="home">
-          <div className="hero-copy">
-            <Eyebrow>SEASON 2026 // LIMITED DROP</Eyebrow>
+          <motion.div
+            className="hero-copy"
+            initial={prefersReducedMotion ? false : { opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={prefersReducedMotion ? { duration: 0 } : { duration: 0.68, delay: 0.08, ease: 'easeOut' }}
+          >
+            <Eyebrow>WINTER 2026 // THE COLD EDIT</Eyebrow>
             <h1>
-              ستايلك الفاخر.<br />
-              <em>بتفاصيل حصرية.</em>
+              أناقة الشتاء.<br />
+              <em>بروح IGO.</em>
             </h1>
             <p>
-              أزياء ستريت وير بتصاميم مينيمال وخامات قطنية فائقة الثقل بوزن 450 جرام.
-              صُممت لمن يبحث عن الحضور القوي والراحة التامة في كل إطلالة.
+              قطع IGO الأساسية بخامات قطنية مدروسة وقصات واسعة، تجمع بين الراحة والحضور الهادئ في الأيام الباردة.
             </p>
             <div className="hero-actions">
               <a className="button button-accent" href="#products">
-                <span>تصفّح التشكيلة الجديدة</span>
+                <span>اكتشف تشكيلة الشتاء</span>
                 <span aria-hidden="true">←</span>
               </a>
               <a
@@ -253,9 +260,14 @@ function Storefront() {
               <span className="footnote-line" />
               <span>معاينة وقياس عند الاستلام قبل دفع أي جنيه</span>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="hero-visual">
+          <motion.div
+            className="hero-visual"
+            initial={prefersReducedMotion ? false : { opacity: 0, scale: 0.985 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={prefersReducedMotion ? { duration: 0 } : { duration: 0.82, delay: 0.16, ease: 'easeOut' }}
+          >
             <img
               src={ASSET('assets/sample-set.jpg')}
               alt="طقم ستريت وير راقي IGO Clothing"
@@ -264,13 +276,13 @@ function Storefront() {
             <div className="hero-image-shade" />
             <div className="hero-stamp">
               <span>IGO</span>
-              <small>EXCLUSIVE<br />STREETWEAR</small>
+              <small>WINTER<br />EDITION</small>
             </div>
             <div className="hero-image-caption">
-              <span className="caption-index">DROP 01 // 2026</span>
-              <span>MINIMAL LUXURY FIT</span>
+              <span className="caption-index">WINTER EDIT // 2026</span>
+              <span>MINIMAL LUXURY STREETWEAR</span>
             </div>
-          </div>
+          </motion.div>
           <span className="hero-watermark" aria-hidden="true">IGO</span>
         </section>
 
@@ -310,9 +322,9 @@ function Storefront() {
         <section className="products-section section-wrap" id="products">
           <div className="section-heading">
             <div>
-              <Eyebrow dark>THE IGO EDITORIAL</Eyebrow>
-              <h2>تشكيلة <em>الموسم</em></h2>
-              <p>قطع أساسية بتفاصيل هندسية راقية وقصات أوفرسايز مدروسة.</p>
+              <Eyebrow dark>THE IGO WINTER EDIT</Eyebrow>
+              <h2>تشكيلة <em>الشتاء</em></h2>
+              <p>قطع أساسية بتفاصيل مينيمال راقية وقصات أوفرسايز مدروسة.</p>
             </div>
 
             <div className="product-tools">
@@ -592,6 +604,14 @@ function Storefront() {
         <div className="footer-bottom">
           <p>© {new Date().getFullYear()} IGO Clothing Brand. جميع الحقوق محفوظة.</p>
           <span>صُمم بعناية للملابس الفاخرة</span>
+          <span className="winter-music-footer-credit">
+            <span>موسيقى الشتاء:</span>
+            <a href="https://soundcloud.com/scottbuckley" target="_blank" rel="noreferrer">Snowfall by Scott Buckley</a>
+            <span aria-hidden="true">·</span>
+            <a href="https://www.free-stock-music.com/scott-buckley-snowfall.html" target="_blank" rel="noreferrer">Free Stock Music</a>
+            <span aria-hidden="true">·</span>
+            <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noreferrer">CC BY 4.0</a>
+          </span>
         </div>
       </footer>
 
@@ -612,7 +632,7 @@ function Storefront() {
       <div className={`toast${toast ? ' is-visible' : ''}`} role="status" aria-live="polite">
         {toast}
       </div>
-    </>
+    </div>
   )
 }
 
